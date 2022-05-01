@@ -24,6 +24,21 @@ class Account
     protected $accountOwnerName;
     /** @var string|null */
     protected $accountDescription;
+    /** 
+     * 1 – 9: Kontokorrent-/Girokonto
+     * 10 – 19: Sparkonto
+     * 20 – 29: Festgeldkonto (Termineinlagen)
+     * 30 – 39: Wertpapierdepot
+     * 40 – 49: Kredit-/Darlehenskonto
+     * 50 – 59: Kreditkartenkonto
+     * 60 – 69: Fonds-Depot bei einer Kapitalanlagegesellschaft
+     * 70 – 79: Bausparvertrag
+     * 80 – 89: Versicherungsvertrag
+     * 90 – 99: Sonstige (nicht zuordenbar)
+     * (see )
+     * @var int|null
+     */
+    protected $accountType;
 
     public function getId(): ?string
     {
@@ -141,6 +156,21 @@ class Account
     public function setAccountDescription(?string $accountDescription)
     {
         $this->accountDescription = $accountDescription;
+
+        return $this;
+    }
+
+    public function getAccountType(): ?int
+    {
+        return $this->accountType;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAccountType(?int $accountType)
+    {
+        $this->accountType = $accountType;
 
         return $this;
     }

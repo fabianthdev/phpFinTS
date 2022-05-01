@@ -104,6 +104,7 @@ class StatementOfAccount
                     $transaction->setDescription1($trx['description']['description_1']);
                     $transaction->setDescription2($trx['description']['description_2']);
                     $transaction->setStructuredDescription($trx['description']['description']);
+                    $transaction->setDescriptionLines($trx['description']['desc_lines']);
                     $transaction->setBankCode($trx['description']['bank_code']);
                     $transaction->setAccountNumber($trx['description']['account_number']);
                     $transaction->setName($trx['description']['name']);

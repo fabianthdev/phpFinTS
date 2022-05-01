@@ -60,6 +60,12 @@ class Transaction
     protected $structuredDescription;
 
     /**
+     * Dictionary with description lines, mapped to their detail keys
+     * @var array
+     */
+    protected $descriptionLines;
+
+    /**
      * @var string
      */
     protected $bankCode;
@@ -326,6 +332,18 @@ class Transaction
         } else {
             return '';
         }
+    }
+
+    public function getDescriptionLines(): array
+    {
+        return $this->descriptionLines;
+    }
+
+    public function setDescriptionLines(array $descriptionLines)
+    {
+        $this->descriptionLines = $descriptionLines;
+        
+        return $this;
     }
 
     /**
